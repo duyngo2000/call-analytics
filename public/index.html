@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/x-icon" href="./gcalls-16.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="logo.png" />
+    <link rel="manifest" href="manifest.json" />
+    <title>My Appp</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("service-worker.js")
+            .then((reg) => {
+              console.log("Worker registered")
+            })
+            .catch((err) => {
+              console.log("Error in service worker", err)
+            })
+        })
+      }
+    </script>
+  </body>
+</html>
